@@ -1,10 +1,10 @@
-const deleteOperation=async(modelName,idUnderModel)=>{
+const deleteOperation=async(idOfModel,modelName)=>{
     try {
         // LOGGER
-        console.log(" DELETING ", idUnderModel," FROM ",modelName );
+        console.log(" DELETING ", idOfModel," FROM ",modelName );
 
         // UPDATE EXISTING DATA OF MODEL MODEL
-        return await dataSaver.deleteOne({_id:idUnderModel}).then((response)=>{
+        return await modelName.deleteOne({_id:idOfModel}).then((response)=>{
             console.log(" DELETED ",response);
             return true;
         }).catch(error=>{

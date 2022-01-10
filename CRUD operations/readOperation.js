@@ -1,10 +1,10 @@
-const read=async(modelName,idUnderModel)=>{
+const read=async(idOfModel,modelName)=>{
     try {
         // LOGGER
-        console.log(" READING DOCUMENT ", idUnderModel," FROM ",modelName );
+        console.log(" READING DOCUMENT ", idOfModel," FROM ",modelName );
 
         // FINDING DATA FROM MODEL
-        return await dataSaver.find({_id:idUnderModel}).then((response)=>{
+        return await modelName.find({_id:idOfModel}).then((response)=>{
             console.log(" DATA FROM READING RESPONSE WAS ",response);
             return response;
         }).catch(error=>{

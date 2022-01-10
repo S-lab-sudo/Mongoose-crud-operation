@@ -4,7 +4,7 @@ const update=async(objectDataToUpdate,modelName,idUnderModel)=>{
         console.log(" UPDATING ", idUnderModel," FROM ",modelName );
 
         // UPDATE EXISTING DATA OF MODEL MODEL
-        return await dataSaver.updateOne({_id:idUnderModel},{$set:objectDataToUpdate}).then((response)=>{
+        return await modelName.updateOne({_id:idUnderModel},{$set:objectDataToUpdate}).then((response)=>{
             console.log(" UPDATED ",response);
             return true;
         }).catch(error=>{
